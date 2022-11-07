@@ -1,5 +1,5 @@
 # router-smart-contract-examples
-Example Smart Contracts coded on Rust compatible with CosmosSDK deployed to Router Chain 
+Sample CosmWasm smart contracts for the Router chain.
 
 ## Prerequisites
 
