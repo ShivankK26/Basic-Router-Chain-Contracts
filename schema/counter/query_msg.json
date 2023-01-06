@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QueryMsg",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "get_contract_version"
+      ],
+      "properties": {
+        "get_contract_version": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "fetch_counter"
+      ],
+      "properties": {
+        "fetch_counter": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}
