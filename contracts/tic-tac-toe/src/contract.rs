@@ -7,7 +7,7 @@ use cosmwasm_std::to_binary;
 #[cfg(not(feature = "library"))]
 use cosmwasm_std::{entry_point, Binary, Deps, DepsMut, Env, MessageInfo, Response, StdResult};
 use cw2::{get_contract_version, set_contract_version};
-use router_wasm_bindings::RouterMsg;
+
 // version info for migration info
 const CONTRACT_NAME: &str = "tic-tac-toe";
 const CONTRACT_VERSION: &str = "0.1.0";
@@ -30,7 +30,7 @@ pub fn execute(
     _env: Env,
     info: MessageInfo,
     msg: ExecuteMsg,
-) -> Result<Response<RouterMsg>, ContractError> {
+) -> Result<Response, ContractError> {
     match msg {
         ExecuteMsg::Invite { coord, opponent } => try_invite(deps, info, coord, opponent),
         ExecuteMsg::Reject {

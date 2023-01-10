@@ -1,6 +1,5 @@
 #[cfg(not(feature = "library"))]
 use cosmwasm_std::{Addr, BankMsg, DepsMut, MessageInfo, Response};
-use router_wasm_bindings::RouterMsg;
 
 use crate::errors::ContractError;
 use crate::state::{Coord, Game, Status, GAMES, GAMES_COUNT};
@@ -10,7 +9,7 @@ pub fn try_invite(
     info: MessageInfo,
     coord: Coord,
     opponent: String,
-) -> Result<Response<RouterMsg>, ContractError> {
+) -> Result<Response, ContractError> {
     let opponent_address = deps.api.addr_validate(&opponent)?;
     if !coord.is_valid() {
         return Err(ContractError::InvalidCoord { coord });
@@ -45,7 +44,7 @@ pub fn try_reject(
     as_host: bool,
     opponent: String,
     game_id: u64,
-) -> Result<Response<RouterMsg>, ContractError> {
+) -> Result<Response, ContractError> {
     let opponent_address = deps.api.addr_validate(&opponent)?;
     let key: (&Addr, &Addr, u64);
     let refund_address: &Addr;
@@ -89,7 +88,7 @@ pub fn try_accept(
     coord: Coord,
     host: String,
     game_id: u64,
-) -> Result<Response<RouterMsg>, ContractError> {
+) -> Result<Response, ContractError> {
     let host_address = deps.api.addr_validate(&host)?;
     if !coord.is_valid() {
         return Err(ContractError::InvalidCoord { coord });
@@ -132,7 +131,7 @@ pub fn try_play(
     coord: Coord,
     opponent: String,
     game_id: u64,
-) -> Result<Response<RouterMsg>, ContractError> {
+) -> Result<Response, ContractError> {
     let opponent_address = deps.api.addr_validate(&opponent)?;
     if !coord.is_valid() {
         return Err(ContractError::InvalidCoord { coord });

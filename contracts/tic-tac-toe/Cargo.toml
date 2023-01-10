@@ -34,7 +34,6 @@ backtraces = ["cosmwasm-std/backtraces"]
 library = []
 
 [dependencies]
-router-wasm-bindings = { version = "0.1.5", default-features = false }
 cosmwasm-std = { version = "1.0.0", features = ["staking"] }
 cw-storage-plus = { version = "0.13.4" }
 schemars = "0.8.1"
