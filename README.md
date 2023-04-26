@@ -36,13 +36,13 @@ Please use the following commands to build the optimized builds:
 docker run --rm -v "$(pwd)":/code \
   --mount type=volume,source="cw-router-chain-contract",target=/code/target \
   --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
-  cosmwasm/workspace-optimizer:0.12.5
+  cosmwasm/workspace-optimizer:0.12.13
 
 ```
 
 or run the following script
 ```
-sh scripts/build_optimize_wasm.sh
+sh scripts/build.sh
 ``` 
 
 ## Contract deployment script
