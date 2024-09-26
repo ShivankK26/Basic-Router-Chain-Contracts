@@ -2,7 +2,7 @@
 name = "tic-tac-toe"
 version = "0.1.0"
 edition = "2021"
-authors = ["Gaurav Agarwal <gaurav@routerprotocol.com>"]
+authors = ["Shivank Kapur <shivank@routerprotocol.com>"]
 description = "Basic implementation of a user defined bridge contract"
 repository = "https://github.com/router-protocol/cw-bridge-contracts.git"
 
